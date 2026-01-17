@@ -1,5 +1,6 @@
 # Strikely: Options Portfolio Manager
-<img width="1419" height="1170" alt="Screenshot 2026-01-17 at 9 29 58 AM" src="https://github.com/user-attachments/assets/db226b70-6351-48da-ba03-0a8582d2a111" />
+<img width="1633" height="1120" alt="Screenshot 2026-01-17 at 9 31 43 AM" src="https://github.com/user-attachments/assets/a9b13548-bdd4-4101-b2f2-beae63948e14" />
+
 
 ## Stop Guessing. Start Measuring.
 
