@@ -1,0 +1,113 @@
+{
+  "name": "OptionsPosition",
+  "type": "object",
+  "properties": {
+    "symbol": {
+      "type": "string",
+      "description": "Stock symbol (e.g., AAPL, TSLA)"
+    },
+    "strategy_type": {
+      "type": "string",
+      "enum": [
+        "cash_secured_put",
+        "covered_call"
+      ],
+      "description": "Type of options strategy"
+    },
+    "contract_type": {
+      "type": "string",
+      "enum": [
+        "put",
+        "call"
+      ],
+      "description": "Type of option contract"
+    },
+    "strike_price": {
+      "type": "number",
+      "description": "Strike price of the option"
+    },
+    "expiration_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Expiration date of the option"
+    },
+    "premium_received": {
+      "type": "number",
+      "description": "Premium received per contract"
+    },
+    "contracts_count": {
+      "type": "number",
+      "default": 1,
+      "description": "Number of contracts"
+    },
+    "underlying_price_at_entry": {
+      "type": "number",
+      "description": "Stock price when position was opened"
+    },
+    "cash_secured_amount": {
+      "type": "number",
+      "description": "Cash amount secured for puts"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "expired_worthless",
+        "assigned",
+        "bought_to_close",
+        "rolled"
+      ],
+      "default": "open",
+      "description": "Current status of the position"
+    },
+    "closing_premium_paid": {
+      "type": "number",
+      "description": "Premium paid to close position early"
+    },
+    "assignment_price": {
+      "type": "number",
+      "description": "Price at which shares were assigned"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes about the position"
+    },
+    "profit_loss": {
+      "type": "number",
+      "description": "Realized profit/loss"
+    },
+    "annualized_return": {
+      "type": "number",
+      "description": "Annualized return percentage"
+    },
+    "pre_trade_thesis": {
+      "type": "string",
+      "description": "Journaling: The reasoning for entering the trade."
+    },
+    "market_conditions_at_entry": {
+      "type": "string",
+      "description": "Journaling: Market conditions when the position was opened."
+    },
+    "lessons_learned": {
+      "type": "string",
+      "description": "Journaling: Key takeaways after closing the trade."
+    }
+  },
+  "required": [
+    "symbol",
+    "strategy_type",
+    "contract_type",
+    "strike_price",
+    "expiration_date",
+    "premium_received",
+    "contracts_count"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

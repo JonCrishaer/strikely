@@ -1,0 +1,17 @@
+{
+  "properties": {
+    "subscription_status": {
+      "type": "string",
+      "enum": [
+        "free",
+        "active",
+        "cancelled"
+      ],
+      "default": "free",
+      "description": "The user's current subscription status."
+    }
+  },
+  "name": "User",
+  "required": [],
+  "type": "object"
+}

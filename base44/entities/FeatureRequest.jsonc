@@ -1,0 +1,51 @@
+{
+  "name": "FeatureRequest",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title of the feature request"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the requested feature"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "under_review",
+        "in_progress",
+        "completed",
+        "rejected"
+      ],
+      "default": "pending",
+      "description": "Current status of the feature request"
+    },
+    "vote_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Net vote count (upvotes - downvotes)"
+    },
+    "upvotes": {
+      "type": "number",
+      "default": 0,
+      "description": "Total upvotes"
+    },
+    "downvotes": {
+      "type": "number",
+      "default": 0,
+      "description": "Total downvotes"
+    }
+  },
+  "required": [
+    "title",
+    "description"
+  ],
+  "rls": {
+    "read": {},
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

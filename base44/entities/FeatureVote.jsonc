@@ -1,0 +1,30 @@
+{
+  "name": "FeatureVote",
+  "type": "object",
+  "properties": {
+    "feature_request_id": {
+      "type": "string",
+      "description": "ID of the feature request being voted on"
+    },
+    "vote_type": {
+      "type": "string",
+      "enum": [
+        "upvote",
+        "downvote"
+      ],
+      "description": "Type of vote"
+    }
+  },
+  "required": [
+    "feature_request_id",
+    "vote_type"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

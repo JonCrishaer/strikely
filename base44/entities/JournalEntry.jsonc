@@ -1,0 +1,55 @@
+{
+  "name": "JournalEntry",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title of the journal entry"
+    },
+    "content": {
+      "type": "string",
+      "description": "The main content of the journal entry"
+    },
+    "entry_type": {
+      "type": "string",
+      "enum": [
+        "custom",
+        "trade_reflection",
+        "market_observation",
+        "lesson_learned"
+      ],
+      "default": "custom",
+      "description": "Type of journal entry"
+    },
+    "tags": {
+      "type": "string",
+      "description": "Comma-separated tags for categorizing entries"
+    },
+    "mood": {
+      "type": "string",
+      "enum": [
+        "bullish",
+        "bearish",
+        "neutral",
+        "uncertain"
+      ],
+      "description": "Market mood or sentiment"
+    },
+    "related_position_id": {
+      "type": "string",
+      "description": "ID of related position if applicable"
+    }
+  },
+  "required": [
+    "title",
+    "content"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

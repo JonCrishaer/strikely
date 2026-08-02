@@ -1,0 +1,14 @@
+{
+  "description": "This agent manages user subscriptions and can update subscription statuses based on payment events",
+  "instructions": "You can update user subscription statuses, handle subscription events, and manage user access to the platform",
+  "tool_configs": [
+    {
+      "entity_name": "User",
+      "allowed_operations": [
+        "read",
+        "update"
+      ]
+    }
+  ],
+  "name": "subscription_manager"
+}

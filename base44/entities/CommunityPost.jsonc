@@ -1,0 +1,43 @@
+{
+  "name": "CommunityPost",
+  "type": "object",
+  "properties": {
+    "position_id": {
+      "type": "string",
+      "description": "The ID of the associated options position"
+    },
+    "symbol": {
+      "type": "string",
+      "description": "Stock symbol for easy display"
+    },
+    "strategy_type": {
+      "type": "string",
+      "description": "The strategy type for easy filtering"
+    },
+    "title": {
+      "type": "string",
+      "description": "A user-defined title for the post"
+    },
+    "notes": {
+      "type": "string",
+      "description": "The user's thoughts or journaling notes for the community"
+    },
+    "likes": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of likes on the post"
+    }
+  },
+  "required": [
+    "position_id",
+    "symbol",
+    "strategy_type",
+    "title"
+  ],
+  "rls": {
+    "read": {},
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

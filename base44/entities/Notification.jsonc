@@ -1,0 +1,58 @@
+{
+  "name": "Notification",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of the user who should receive this notification"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "new_post_from_followed",
+        "comment_on_your_post",
+        "new_follower"
+      ],
+      "description": "Type of notification"
+    },
+    "title": {
+      "type": "string",
+      "description": "Notification title"
+    },
+    "message": {
+      "type": "string",
+      "description": "Notification message"
+    },
+    "related_id": {
+      "type": "string",
+      "description": "ID of related post, comment, etc."
+    },
+    "is_read": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the notification has been read"
+    },
+    "from_user_email": {
+      "type": "string",
+      "description": "Email of the user who triggered this notification"
+    },
+    "from_user_name": {
+      "type": "string",
+      "description": "Name of the user who triggered this notification"
+    }
+  },
+  "required": [
+    "user_email",
+    "type",
+    "title",
+    "message"
+  ],
+  "rls": {
+    "read": {
+      "user_email": "{{user.email}}"
+    },
+    "write": {
+      "user_email": "{{user.email}}"
+    }
+  }
+}
